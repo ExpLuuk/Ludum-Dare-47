@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ExpPlus.LD47.Weapons;
+using ExpPlus.LD47.Common;
+using ExpPlus.LD47.Altar;
 
 namespace ExpPlus.LD47.Enemies {
 
-    public class EnemyController : MonoBehaviour {
+    public class EnemyController : MonoBehaviour, IDeathHandler{
 
         [Header ("References")]
         [SerializeField]
         private Rigidbody2D rigidBody;
+        [SerializeField]
+        private WeaponController weaponController;
+        public AltarController altar;
         public Transform target;
-        public WeaponController weaponController;
 
         [Header ("Config")]
         public float speed = 1f;
@@ -56,5 +60,10 @@ namespace ExpPlus.LD47.Enemies {
             transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
+        public void IHandleDeath() {
+
+            altar.fleet.Remove(this);
+            Destroy(gameObject);
+        }
     }
 }

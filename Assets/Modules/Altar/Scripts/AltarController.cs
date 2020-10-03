@@ -7,7 +7,7 @@ using ExpPlus.LD47.Enemies;
 
 namespace ExpPlus.LD47.Altar {
 
-    public class Altar : MonoBehaviour {
+    public class AltarController : MonoBehaviour {
 
         [Header("References")]
         public GameObject player;
@@ -44,6 +44,7 @@ namespace ExpPlus.LD47.Altar {
                     GameObject newEnemy = GameObject.Instantiate(enemyPrefab, transform.position, transform.rotation);
                     EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
 
+                    enemyController.altar = this;
                     enemyController.target = player.transform;
                     enemyController.canAttackPlayer = attackingPlayer;
 

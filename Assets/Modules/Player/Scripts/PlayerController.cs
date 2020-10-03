@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using ExpPlus.LD47.Weapons;
+using ExpPlus.LD47.Common;
 
 namespace ExpPlus.LD47.Player {
 
-    public class PlayerController : MonoBehaviour {
+    public class PlayerController : MonoBehaviour, IDeathHandler  {
 
         private Vector2 movementInput;
         private Vector2 orientationalInput;
@@ -31,9 +32,9 @@ namespace ExpPlus.LD47.Player {
 
             if (holdingFire)
                 weaponController.TryFire();
-
         }
 
+        // FixedUpdate is called on a fixed timestep
         private void FixedUpdate() {
 
             rigidBody.AddForce(movementInput * speed, ForceMode2D.Force);
@@ -48,8 +49,11 @@ namespace ExpPlus.LD47.Player {
             transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
-        #region InputHooks
+        public void IHandleDeath() {
+            throw new System.NotImplementedException();
+        }
 
+        #region InputHooks
         public void GetShootingInput(InputAction.CallbackContext context) {
 
             if (context.started)
