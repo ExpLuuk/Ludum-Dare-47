@@ -6,10 +6,13 @@ namespace ExpPlus.LD47.Weapons {
 
     public class WeaponController : MonoBehaviour {
 
+        public enum Mode { Player, Enemy }
+        [Header("Config")]
+        public Mode mode;
         public WeaponBehaviour activeWeaponBehaviour;
         public ElementAmmo activeElementAmmo;
 
-        public float fireRateClock;
+        private float fireRateClock;
 
         // Start is called before the first frame update
         void Start() {
@@ -30,7 +33,7 @@ namespace ExpPlus.LD47.Weapons {
             //Handle firing here
 
             GameObject projectileGO = Instantiate(activeWeaponBehaviour.projectilePrefab, transform.position, transform.rotation);
-            projectileGO.layer = LayerMask.NameToLayer("PlayerProjectiles");
+            projectileGO.layer = LayerMask.NameToLayer(mode == Mode.Player ? "PlayerProjectiles" : "EnemyProjectiles");
             projectileGO.GetComponent<Rigidbody2D>().AddForce(transform.up * activeWeaponBehaviour.projectileVelocity, ForceMode2D.Impulse);
 
             if(activeElementAmmo && activeElementAmmo.ammo > 0)

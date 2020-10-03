@@ -32,8 +32,6 @@ namespace ExpPlus.LD47.Altar {
 
             if (context.performed) {
 
-                Debug.Log("Activated");
-
                 AttemptToUseAltar();
             }
         }

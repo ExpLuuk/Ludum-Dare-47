@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6972583940436004242}
   - component: {fileID: 4851032273075949359}
   - component: {fileID: -8467625582568931693}
-  m_Layer: 0
+  - component: {fileID: -6351257272790767819}
+  m_Layer: 9
   m_Name: enemy_default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007f98d82188e7644871841c53175053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
   target: {fileID: 0}
+  weaponController: {fileID: -6351257272790767819}
   speed: 5
   minPersuitRadius: 5
 --- !u!114 &-8467625582568931693
@@ -151,3 +154,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   requiredElement: []
+--- !u!114 &-6351257272790767819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277922856251192543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970f1ee9f91eb2843b27596960d825e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  activeWeaponBehaviour: {fileID: 0}
+  activeElementAmmo: {fileID: 0}

@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6351257272790767819, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
+        type: 3}
+      propertyPath: activeWeaponBehaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: ea3ae0cba24d8e046a84fbacfe6d5253,
+        type: 2}
     - target: {fileID: 3155013963273418577, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
         type: 3}
       propertyPath: m_Sprite

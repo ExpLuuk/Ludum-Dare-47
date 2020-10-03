@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ExpPlus.LD47.Weapons;
 
 namespace ExpPlus.LD47.Enemies {
 
     public class EnemyController : MonoBehaviour {
 
+        [Header ("References")]
+        [SerializeField]
         private Rigidbody2D rigidBody;
         public Transform target;
+        public WeaponController weaponController;
 
-        public float speed = 10f;
-        public float minPersuitRadius = 10f;
+        [Header ("Config")]
+        public float speed = 1f;
+        public float stopRadius = 5f;
+        public float attackRadius = 10f;
 
         // Start is called before the first frame update
         void Start() {
@@ -22,12 +28,19 @@ namespace ExpPlus.LD47.Enemies {
         // Update is called once per frame
         void Update() {
 
-            if(Vector3.Distance(transform.position, target.position) > minPersuitRadius) {
+            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+
+            if (distanceToPlayer > stopRadius) {
 
                 rigidBody.AddForce(transform.up * speed);
             } else {
 
-                rigidBody.AddForce(transform.up * (speed * (Vector3.Distance(transform.position, target.position) - minPersuitRadius)));
+                rigidBody.AddForce(transform.up * (speed * (Vector3.Distance(transform.position, target.position) - stopRadius)));
+            }
+
+            if(distanceToPlayer < attackRadius) {
+
+                weaponController.TryFire();
             }
 
             UpdateRotation();
