@@ -5,7 +5,8 @@ namespace ExpPlus.LD47.Weapons {
 
     public class Projectile : MonoBehaviour {
 
-        public int damage;
+        public int damage = 1;
+        public Element element;
 
         private void OnCollisionEnter2D(Collision2D collision) {
 
@@ -13,7 +14,7 @@ namespace ExpPlus.LD47.Weapons {
 
             if (health != null) {
 
-                health.Damage(damage);
+                health.Damage(damage, element);
             }
 
             Destroy(gameObject);

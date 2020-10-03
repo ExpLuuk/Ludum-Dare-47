@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponBehaviour : ScriptableObject
 {
     public GameObject projectilePrefab;
+
     public float fireRate = 1;
-    public float projectileVelocity;
-    public int damage = 1;
+    public float projectileVelocity = 10;
 }

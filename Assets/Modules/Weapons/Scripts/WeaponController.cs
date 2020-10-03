@@ -23,10 +23,9 @@ namespace ExpPlus.LD47.Weapons {
 
             //Handle firing here
 
-            GameObject projectile = Instantiate(weaponBehaviour.projectilePrefab, transform.position, transform.rotation);
-            projectile.layer = LayerMask.NameToLayer("PlayerProjectiles");
-            projectile.GetComponent<Rigidbody2D>().AddForce(transform.up * weaponBehaviour.projectileVelocity, ForceMode2D.Impulse);
-            projectile.GetComponent<Projectile>().damage = weaponBehaviour.damage;
+            GameObject projectileGO = Instantiate(weaponBehaviour.projectilePrefab, transform.position, transform.rotation);
+            projectileGO.layer = LayerMask.NameToLayer("PlayerProjectiles");
+            projectileGO.GetComponent<Rigidbody2D>().AddForce(transform.up * weaponBehaviour.projectileVelocity, ForceMode2D.Impulse);
 
             fireRateClock = weaponBehaviour.fireRate;
         }
