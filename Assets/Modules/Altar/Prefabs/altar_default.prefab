@@ -96,8 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  areaBeacon: {fileID: 0}
   element: {fileID: 0}
-  interactionRadius: 5
+  interactionRadius: 3
+  areaRadius: 25
+  enemyPrefab: {fileID: 0}
+  maxFleetSize: 5
+  spawnFrequency: 2
+  fleet: []
+  attackingPlayer: 0
+  spawnTimer: 0
 --- !u!60 &3507598911182495276
 PolygonCollider2D:
   m_ObjectHideFlags: 0

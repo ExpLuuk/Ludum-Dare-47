@@ -106,6 +106,7 @@ namespace ExpPlus.LD47.Altar {
 
         private void OnDrawGizmos() {
 
+            Gizmos.DrawWireSphere(transform.position, interactionRadius);
             Gizmos.DrawWireSphere(areaBeacon ? areaBeacon.position : transform.position, areaRadius);
         }
     }

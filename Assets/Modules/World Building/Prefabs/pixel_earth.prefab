@@ -23,6 +23,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: pixel_earth
       objectReference: {fileID: 0}
+    - target: {fileID: 1443651201386320226, guid: dcba4fda2e88afe489d9f7561c49da71,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443651201386320226, guid: dcba4fda2e88afe489d9f7561c49da71,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6616367120428170054, guid: dcba4fda2e88afe489d9f7561c49da71,
         type: 3}
       propertyPath: m_Sprite
