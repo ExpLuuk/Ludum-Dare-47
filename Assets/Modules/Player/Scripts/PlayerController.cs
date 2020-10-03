@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using ExpPlus.LD47.Weapons;
 
 namespace ExpPlus.LD47.Player {
 
@@ -9,37 +8,57 @@ namespace ExpPlus.LD47.Player {
 
         private Vector2 movementInput;
         private Vector2 orientationalInput;
+        private bool holdingFire;
 
-        private Rigidbody2D rigidbody;
-
-        public Camera camera;
+        private Rigidbody2D rigidBody;
+        private WeaponController weaponController;
+        private new Camera camera;
 
         public float speed = 10;
 
         // Start is called before the first frame update
         void Start() {
 
-            rigidbody = GetComponent<Rigidbody2D>();
-            //camera = Camera.main;
+            rigidBody = GetComponent<Rigidbody2D>();
+            weaponController = GetComponent<WeaponController>();
+            camera = Camera.main;
         }
 
         // Update is called once per frame
         void Update() {
 
+            UpdateRotation();
+
+            if (holdingFire)
+                weaponController.TryFire();
+
+        }
+
+        private void FixedUpdate() {
+
+            rigidBody.AddForce(movementInput * speed, ForceMode2D.Force);
+        }
+
+        private void UpdateRotation() {
+
             Vector3 pointerWorldPos = camera.ScreenToWorldPoint(new Vector3(orientationalInput.x, orientationalInput.y, camera.nearClipPlane));
             Vector3 direction = pointerWorldPos - transform.position;
-            Debug.DrawLine(transform.position, pointerWorldPos, Color.green);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
-        private void FixedUpdate() {
+        #region InputHooks
 
-            rigidbody.AddForce(movementInput * speed, ForceMode2D.Force);
+        public void GetShootingInput(InputAction.CallbackContext context) {
+
+            if (context.started)
+                holdingFire = true;
+
+            if (context.canceled) 
+                holdingFire = false;
         }
 
-        #region InputHooks
         public void GetMovementInput(InputAction.CallbackContext context) {
 
             movementInput = context.ReadValue<Vector2>();
