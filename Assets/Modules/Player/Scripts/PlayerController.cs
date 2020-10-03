@@ -11,10 +11,10 @@ namespace ExpPlus.LD47.Player {
         private Vector2 orientationalInput;
 
         private Rigidbody2D rigidbody;
+
         public Camera camera;
 
-        public float speed;
-
+        public float speed = 10;
 
         // Start is called before the first frame update
         void Start() {
@@ -36,9 +36,10 @@ namespace ExpPlus.LD47.Player {
 
         private void FixedUpdate() {
 
-            rigidbody.velocity = movementInput * speed;
+            rigidbody.AddForce(movementInput * speed, ForceMode2D.Force);
         }
 
+        #region InputHooks
         public void GetMovementInput(InputAction.CallbackContext context) {
 
             movementInput = context.ReadValue<Vector2>();
@@ -48,5 +49,6 @@ namespace ExpPlus.LD47.Player {
 
             orientationalInput = context.ReadValue<Vector2>();
         }
+        #endregion
     }
 }
