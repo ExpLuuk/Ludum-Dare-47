@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01f650b3edcccc4e9c754fffd573e90, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
+  weaponBehaviour: {fileID: 11400000, guid: af67077e717345748aeeed2c06064606, type: 2}
+  ammo: {fileID: 11400000, guid: 92dc3aa662db83949bee046b5aedb72d, type: 2}

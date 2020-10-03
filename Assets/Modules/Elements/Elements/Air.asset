@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01f650b3edcccc4e9c754fffd573e90, type: 3}
   m_Name: Air
   m_EditorClassIdentifier: 
+  weaponBehaviour: {fileID: 11400000, guid: 535166f4067f24745a3b0374c05ee4d9, type: 2}
+  ammo: {fileID: 11400000, guid: 198f92970152cfc4d9ba5cce8713fd2c, type: 2}

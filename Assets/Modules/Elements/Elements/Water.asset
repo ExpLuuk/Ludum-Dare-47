@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01f650b3edcccc4e9c754fffd573e90, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  weaponBehaviour: {fileID: 11400000, guid: f0320ea1ea934fa42ae569fbc26ef5b6, type: 2}
+  ammo: {fileID: 11400000, guid: 83244c2a3172825478937dfe946adbc7, type: 2}
