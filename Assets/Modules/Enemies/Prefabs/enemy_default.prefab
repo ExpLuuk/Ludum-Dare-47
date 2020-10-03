@@ -138,8 +138,10 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   target: {fileID: 0}
   weaponController: {fileID: -6351257272790767819}
-  speed: 5
-  minPersuitRadius: 5
+  speed: 3
+  stopRadius: 5
+  attackRadius: 10
+  canAttackPlayer: 0
 --- !u!114 &-8467625582568931693
 MonoBehaviour:
   m_ObjectHideFlags: 0

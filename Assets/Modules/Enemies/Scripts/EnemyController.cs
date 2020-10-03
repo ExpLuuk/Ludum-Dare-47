@@ -18,6 +18,9 @@ namespace ExpPlus.LD47.Enemies {
         public float stopRadius = 5f;
         public float attackRadius = 10f;
 
+        [Header("Runtime Controls")]
+        public bool canAttackPlayer = false;
+
         // Start is called before the first frame update
         void Start() {
 

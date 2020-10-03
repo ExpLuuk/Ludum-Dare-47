@@ -13,6 +13,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f653d036cd8516742b236eb7b038739e,
         type: 2}
+    - target: {fileID: 554082073137867863, guid: 30e4947481b5de9449c9a4ee3eae2d7e,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6649426492168140498, guid: 578c5addabf4a1844804bea917e06074,
+        type: 3}
     - target: {fileID: 1211919016604319501, guid: 30e4947481b5de9449c9a4ee3eae2d7e,
         type: 3}
       propertyPath: m_LocalPosition.x
