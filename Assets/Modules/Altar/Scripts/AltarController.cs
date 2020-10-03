@@ -41,11 +41,12 @@ namespace ExpPlus.LD47.Altar {
 
                 if(fleet.Count < maxFleetSize) {
 
-                    GameObject newEnemy = GameObject.Instantiate(enemyPrefab, transform.position, transform.rotation);
+                    GameObject newEnemy = GameObject.Instantiate(enemyPrefab, GeneratePatrolTarget(), transform.rotation);
                     EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
 
                     enemyController.altar = this;
                     enemyController.target = player.transform;
+                    enemyController.patrolTarget = GeneratePatrolTarget();
                     enemyController.canAttackPlayer = attackingPlayer;
 
                     fleet.Add(enemyController);
@@ -53,7 +54,7 @@ namespace ExpPlus.LD47.Altar {
                 }
             }
 
-            if(Vector3.Distance(transform.position, player.transform.position) < areaRadius) {
+            if(Vector3.Distance(areaBeacon.position, player.transform.position) < areaRadius) {
 
                 if (!attackingPlayer) {
 
@@ -83,6 +84,14 @@ namespace ExpPlus.LD47.Altar {
 
                 player.GetComponent<WeaponController>().SwitchElement(element);
             }
+        }
+
+        public Vector3 GeneratePatrolTarget() {
+
+            Vector3 generatedTarget = areaBeacon.position + (Random.insideUnitSphere * areaRadius);
+            generatedTarget.z = 0;
+
+            return generatedTarget;
         }
 
         #region Input Hooks

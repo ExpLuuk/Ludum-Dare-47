@@ -18,12 +18,16 @@ namespace ExpPlus.LD47.Enemies {
         public Transform target;
 
         [Header ("Config")]
-        public float speed = 1f;
-        public float stopRadius = 5f;
-        public float attackRadius = 10f;
+        public float chaseSpeed = 3f;
+        public float chaseStopRadius = 5f;
+        public float chaseAttackRadius = 10f;
+        [Space(10)]
+        public float patrolSpeed = 2f;
+        public float patrolStopDistance = .5f;
 
         [Header("Runtime Controls")]
         public bool canAttackPlayer = false;
+        public Vector3 patrolTarget;
 
         // Start is called before the first frame update
         void Start() {
@@ -35,31 +39,51 @@ namespace ExpPlus.LD47.Enemies {
         // Update is called once per frame
         void Update() {
 
-            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+            if (canAttackPlayer) {
 
-            if (distanceToPlayer > stopRadius) {
-
-                rigidBody.AddForce(transform.up * speed);
+                ChaseAndAttack();
             } else {
 
-                rigidBody.AddForce(transform.up * (speed * (Vector3.Distance(transform.position, target.position) - stopRadius)));
-            }
-
-            if(distanceToPlayer < attackRadius) {
-
-                weaponController.TryFire();
+                Patrol();
             }
 
             UpdateRotation();
         }
         private void UpdateRotation() {
 
-            Vector3 direction = target.position - transform.position;
+            Vector3 direction = (canAttackPlayer ? target.position  : patrolTarget) - transform.position;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
+        private void ChaseAndAttack() {
+
+            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+
+            if (distanceToPlayer > chaseStopRadius) {
+
+                rigidBody.AddForce(transform.up * chaseSpeed);
+            } else {
+
+                rigidBody.AddForce(transform.up * (chaseSpeed * (Vector3.Distance(transform.position, target.position) - chaseStopRadius)));
+            }
+
+            if (distanceToPlayer < chaseAttackRadius) {
+
+                weaponController.TryFire();
+            }
+        }
+
+        private void Patrol() {
+
+            if(Vector3.Distance(transform.position, patrolTarget) <= patrolStopDistance) {
+                
+                patrolTarget = altar.GeneratePatrolTarget();                
+            }
+
+            rigidBody.AddForce(transform.up * patrolSpeed);
+        }
         public void IHandleDeath() {
 
             altar.fleet.Remove(this);

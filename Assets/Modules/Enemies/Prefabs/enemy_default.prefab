@@ -136,12 +136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
-  target: {fileID: 0}
   weaponController: {fileID: -6351257272790767819}
-  speed: 3
-  stopRadius: 5
-  attackRadius: 10
+  altar: {fileID: 0}
+  target: {fileID: 0}
+  chaseSpeed: 3
+  chaseStopRadius: 5
+  chaseAttackRadius: 10
+  patrolSpeed: 2
+  patrolStopDistance: 0.5
   canAttackPlayer: 0
+  patrolTarget: {x: 0, y: 0, z: 0}
 --- !u!114 &-8467625582568931693
 MonoBehaviour:
   m_ObjectHideFlags: 0
