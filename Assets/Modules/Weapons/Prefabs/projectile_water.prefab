@@ -11,14 +11,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e96634332c8e6f244b41ef8d0bfe4169,
+      objectReference: {fileID: 21300000, guid: 72496e910b25ed747b004c784d080a14,
         type: 3}
+    - target: {fileID: 848317838055084423, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 891900abeae0a1a42a072bdaf0f09b16, type: 2}
     - target: {fileID: 2237307301865669546, guid: 8340840f8d196f742b36a6ea3d03fc7a,
         type: 3}
       propertyPath: element
       value: 
       objectReference: {fileID: 11400000, guid: 679431ea11608634f89bd6250dc25014,
         type: 2}
+    - target: {fileID: 2433271376994828129, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433271376994828129, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.2392214
+      objectReference: {fileID: 0}
     - target: {fileID: 6766575684187088025, guid: 8340840f8d196f742b36a6ea3d03fc7a,
         type: 3}
       propertyPath: m_LocalPosition.x

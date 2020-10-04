@@ -7,12 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 848317838055084423, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dbe6fe40bd1ff914ebe95da5308a9496,
+        type: 3}
+    - target: {fileID: 848317838055084423, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f01254b41f1ff584a9b712ef5509b287, type: 2}
     - target: {fileID: 2237307301865669546, guid: 8340840f8d196f742b36a6ea3d03fc7a,
         type: 3}
       propertyPath: element
       value: 
       objectReference: {fileID: 11400000, guid: ad2b2235f1a424c49bdd3b7147a6200c,
         type: 2}
+    - target: {fileID: 2433271376994828129, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433271376994828129, guid: 8340840f8d196f742b36a6ea3d03fc7a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 6766575684187088025, guid: 8340840f8d196f742b36a6ea3d03fc7a,
         type: 3}
       propertyPath: m_LocalPosition.x
