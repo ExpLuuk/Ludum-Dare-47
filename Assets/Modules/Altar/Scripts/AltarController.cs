@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using ExpPlus.LD47.Common;
-using ExpPlus.LD47.Weapons;
-using ExpPlus.LD47.Enemies;
+using ExpPlus.BreakAway.Health;
+using ExpPlus.BreakAway.Weapons;
+using ExpPlus.BreakAway.Enemies;
 
-namespace ExpPlus.LD47.Altar {
+namespace ExpPlus.BreakAway.Altar {
 
     public class AltarController : MonoBehaviour {
 
         [Header("References")]
         public GameObject player;
         public Transform areaBeacon;
+        [SerializeField]
+        private AudioSource selectSource = default;
 
         [Header("Config")]
         public Element element;
@@ -42,6 +44,7 @@ namespace ExpPlus.LD47.Altar {
                 if(fleet.Count < maxFleetSize) {
 
                     GameObject newEnemy = GameObject.Instantiate(enemyPrefab, GeneratePatrolTarget(), transform.rotation);
+                    newEnemy.transform.SetParent(transform);
                     EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
 
                     enemyController.altar = this;
@@ -83,6 +86,8 @@ namespace ExpPlus.LD47.Altar {
             if(Vector3.Distance(transform.position, player.transform.position) <= interactionRadius) {
 
                 player.GetComponent<WeaponController>().SwitchElement(element);
+
+                selectSource.Play();
             }
         }
 

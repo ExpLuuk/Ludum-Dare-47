@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2312953644591975195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4290384651424630661, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: elementAmmo
+      value: 
+      objectReference: {fileID: 11400000, guid: 83244c2a3172825478937dfe946adbc7,
+        type: 2}
+    - target: {fileID: 5080125858468110548, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e08930ca835c2148ad28918785c08ca, type: 2}
+    - target: {fileID: 5080125858468110548, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b88acec46c281d14a988aa2cf8ecf58b,
+        type: 3}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989809590309616124, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700119632465193440, guid: 83351f626b75ae440ad49ec5019723dd,
+        type: 3}
+      propertyPath: m_Name
+      value: essence_water_prefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83351f626b75ae440ad49ec5019723dd, type: 3}

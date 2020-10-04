@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ExpPlus.LD47.WorldBuilding {
+namespace ExpPlus.BreakAway.WorldBuilding {
 
     [System.Serializable]
     public class ColorPrefabCombo

@@ -1,21 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using ExpPlus.LD47.Weapons;
-using ExpPlus.LD47.Common;
-using ExpPlus.LD47.Altar;
+﻿using UnityEngine;
+using ExpPlus.BreakAway.Weapons;
+using ExpPlus.BreakAway.Health;
+using ExpPlus.BreakAway.Altar;
 
-namespace ExpPlus.LD47.Enemies {
+namespace ExpPlus.BreakAway.Enemies {
 
     public class EnemyController : MonoBehaviour, IDeathHandler{
 
         [Header ("References")]
         [SerializeField]
-        private Rigidbody2D rigidBody;
+        private Rigidbody2D rigidBody = default;
         [SerializeField]
-        private WeaponController weaponController;
+        private WeaponController weaponController = default;
         public AltarController altar;
         public Transform target;
+        [SerializeField]
+        private GameObject essencePrefab = default;
+        [SerializeField]
+        private GameObject healthPrefab = default;
 
         [Header ("Config")]
         public float chaseSpeed = 3f;
@@ -85,6 +87,12 @@ namespace ExpPlus.LD47.Enemies {
             rigidBody.AddForce(transform.up * patrolSpeed);
         }
         public void IHandleDeath() {
+
+            GameObject essence = GameObject.Instantiate(essencePrefab, transform.position, transform.rotation);
+            essence.GetComponent<PickupController>().target = target;
+
+            GameObject health = GameObject.Instantiate(healthPrefab, transform.position, transform.rotation);
+            health.GetComponent<PickupController>().target = target;
 
             altar.fleet.Remove(this);
             Destroy(gameObject);

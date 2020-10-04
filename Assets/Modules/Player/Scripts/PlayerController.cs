@@ -1,19 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using ExpPlus.LD47.Weapons;
-using ExpPlus.LD47.Common;
+using ExpPlus.BreakAway.Weapons;
+using ExpPlus.BreakAway.Health;
 
-namespace ExpPlus.LD47.Player {
+namespace ExpPlus.BreakAway.Player {
 
     public class PlayerController : MonoBehaviour, IDeathHandler  {
 
-        private Vector2 movementInput;
-        private Vector2 orientationalInput;
-        private bool holdingFire;
-
+        [Header("References")]
+        [SerializeField]
         private Rigidbody2D rigidBody;
+        [SerializeField]
         private WeaponController weaponController;
+        [SerializeField]
         private new Camera camera;
+        [SerializeField]
+        private GameObject gameOverScreen = default;
+        [SerializeField]
+        private GameObject wonScreen = default;
+
+        [Header ("Runtime Controls")]
+        [SerializeField]
+        private Vector2 movementInput;
+        [SerializeField]
+        private Vector2 orientationalInput;
+        [SerializeField]
+        private bool holdingFire;
 
         public float speed = 10;
 
@@ -27,6 +39,15 @@ namespace ExpPlus.LD47.Player {
 
         // Update is called once per frame
         void Update() {
+
+            if(Vector3.Distance(new Vector3(50,50,0), transform.position) > 50f) {
+
+                wonScreen.SetActive(true);
+
+                Destroy(GameObject.Find("Altars"));
+
+                Destroy(gameObject);
+            }
 
             UpdateRotation();
 
@@ -50,7 +71,12 @@ namespace ExpPlus.LD47.Player {
         }
 
         public void IHandleDeath() {
-            throw new System.NotImplementedException();
+
+            gameOverScreen.SetActive(true);
+
+            Destroy(GameObject.Find("Altars"));
+
+            Destroy(gameObject);
         }
 
         #region InputHooks

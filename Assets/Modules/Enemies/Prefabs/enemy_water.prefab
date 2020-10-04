@@ -79,6 +79,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851032273075949359, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
+        type: 3}
+      propertyPath: essencePrefab
+      value: 
+      objectReference: {fileID: 8998992892310381307, guid: 48797f9331cc2b7419eaa0b6fa267371,
+        type: 3}
+    - target: {fileID: 4851032273075949359, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
+        type: 3}
+      propertyPath: healthPrefab
+      value: 
+      objectReference: {fileID: 683066680755013337, guid: 80e3d6854c1cf4f4a941336ff3164b21,
+        type: 3}
     - target: {fileID: 5277922856251192543, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
         type: 3}
       propertyPath: m_Name

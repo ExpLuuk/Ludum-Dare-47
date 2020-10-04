@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ExpPlus.LD47.WorldBuilding {
+namespace ExpPlus.BreakAway.WorldBuilding {
 
     public class LoopGenerator : MonoBehaviour {
 

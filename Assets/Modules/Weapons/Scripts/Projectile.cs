@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using ExpPlus.LD47.Common;
+using ExpPlus.BreakAway.Health;
 
-namespace ExpPlus.LD47.Weapons {
+namespace ExpPlus.BreakAway.Weapons {
 
     public class Projectile : MonoBehaviour {
 
@@ -10,7 +10,7 @@ namespace ExpPlus.LD47.Weapons {
 
         private void OnCollisionEnter2D(Collision2D collision) {
 
-            Health health = collision.collider.GetComponent<Health>();
+            Health.Health health = collision.collider.GetComponent<Health.Health>();
 
             if (health != null) {
 

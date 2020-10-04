@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using ExpPlus.LD47.Common;
+using ExpPlus.BreakAway.Health;
 
-namespace ExpPlus.LD47.Weapons {
+namespace ExpPlus.BreakAway.Weapons {
 
     public class WeaponController : MonoBehaviour {
 
+        [Header("References")]
+        [SerializeField]
+        private AudioSource shootAudioSource = default;
+
         public enum Mode { Player, Enemy }
-        [Header("Config")]
+        [Header("Runtime Controls")]
         public Mode mode;
         public WeaponBehaviour activeWeaponBehaviour;
         public ElementAmmo activeElementAmmo;
@@ -40,6 +44,8 @@ namespace ExpPlus.LD47.Weapons {
                 activeElementAmmo.ammo -= 1;
 
             fireRateClock = activeWeaponBehaviour.fireRate;
+
+            shootAudioSource.Play();
         }
 
         public void TryFire() {

@@ -185,7 +185,7 @@
                 {
                     "name": "",
                     "id": "c32350a7-acb4-4681-b57b-dd4ba6f19acf",
-                    "path": "<Keyboard>/numpad0",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",

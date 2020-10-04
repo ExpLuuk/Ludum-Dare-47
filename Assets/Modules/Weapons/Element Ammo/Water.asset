@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   element: {fileID: 11400000, guid: 679431ea11608634f89bd6250dc25014, type: 2}
-  ammo: -1
+  ammo: 0

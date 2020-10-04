@@ -1,9 +1,9 @@
-﻿using ExpPlus.LD47.Common;
+﻿using ExpPlus.BreakAway.Health;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ExpPlus.LD47.Weapons {
+namespace ExpPlus.BreakAway.Weapons {
 
     [CreateAssetMenu(menuName = "Weapon Profile", order = 0)]
     public class WeaponBehaviour : ScriptableObject {

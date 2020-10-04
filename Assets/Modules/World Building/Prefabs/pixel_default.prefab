@@ -121,5 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7ad3fd9241f30458a851aa905e2f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitAudioSource: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: fda9e469eb4b2ad4a8ee92c03c6220f9, type: 3}
+  deathParticlesPrefab: {fileID: 8614103241166961021, guid: 5d9a640ce0fbff74887c693c1f01f400,
+    type: 3}
+  useHealthVariable: 0
+  healthVariable: {fileID: 0}
   health: 100
   requiredElement: []

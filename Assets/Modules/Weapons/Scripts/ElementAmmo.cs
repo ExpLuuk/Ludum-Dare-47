@@ -1,7 +1,7 @@
-﻿using ExpPlus.LD47.Common;
+﻿using ExpPlus.BreakAway.Health;
 using UnityEngine;
 
-namespace ExpPlus.LD47.Weapons {
+namespace ExpPlus.BreakAway.Weapons {
 
     [CreateAssetMenu(menuName = "Element Ammo")]
     public class ElementAmmo : ScriptableObject {
