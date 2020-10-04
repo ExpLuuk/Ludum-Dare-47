@@ -17,8 +17,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b1e05b6c20dd1b444b1199f02262b13d,
+      objectReference: {fileID: 21300000, guid: 4cf0addcc05b4634094d17ba8e359fd6,
         type: 3}
+    - target: {fileID: 3155013963273418577, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0465c1d9a439bc4e9fb65bcf7e0bb77, type: 2}
     - target: {fileID: 3224560188046343173, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -78,6 +83,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemy_fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669864116064663700, guid: 05a2680b3edcded42b3e8e2bc9dcec14,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a2680b3edcded42b3e8e2bc9dcec14, type: 3}
